@@ -34,8 +34,8 @@ public class Customer implements Serializable {
     @Column(name = "address", length = 255)
     private String address;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Request> requests = new ArrayList<>();
+    @OneToMany(mappedBy = "customer") // nome do atributo na classe Request que referencia o Customer
+    private List<Request> requests = new ArrayList<>(); // Um cliente pode ter muitos pedidos
 
     public Customer() {}
 
@@ -69,6 +69,7 @@ public class Customer implements Serializable {
         this.address = address;
     }
 
+    // Apenas o getter para a lista de pedidos
     public List<Request> getRequests() {
         return requests;
     }
