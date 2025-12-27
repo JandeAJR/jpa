@@ -38,12 +38,12 @@ public class Request implements Serializable {
     private Double price;
 
     @ManyToOne
-    @JoinColumn(name = "pizzaId")
-    private Pizza pizzaId;
+    @JoinColumn(name = "pizzaId") // chave estrangeira referenciando o Pizza
+    private Pizza pizzaId; // Muitos pedidos podem ser feitos para uma pizza
 
     @ManyToOne
-    @JoinColumn(name = "telephone")
-    private Customer customer;
+    @JoinColumn(name = "telephone") // chave estrangeira referenciando o Customer
+    private Customer customer; // Muitos pedidos podem ser feitos por um cliente
 
     public Request() {}
 
@@ -87,6 +87,7 @@ public class Request implements Serializable {
         this.price = price;
     }
 
+    // Getter e Setter para pizzaId
     public Pizza getPizzaId() {
         return pizzaId;
     }
@@ -95,6 +96,7 @@ public class Request implements Serializable {
         this.pizzaId = pizzaId;
     }
 
+    // Getter e Setter para customer
     public Customer getCustomer() {
        return customer;
     }

@@ -35,8 +35,8 @@ public class Pizza implements Serializable {
     @Column(name = "price")
     private Double price;
 
-    @OneToMany(mappedBy = "pizzaId")
-    private List<Request> requests = new ArrayList<>();
+    @OneToMany(mappedBy = "pizzaId") // nome do atributo na classe Request que referencia o Pizza
+    private List<Request> requests = new ArrayList<>(); // Uma pizza pode ter muitos pedidos
 
     public Pizza() {}
 
@@ -69,6 +69,7 @@ public class Pizza implements Serializable {
         this.price = price;
     }
 
+    // No setter for requests to prevent external modification
     public List<Request> getRequests() {
         return requests;
     }
