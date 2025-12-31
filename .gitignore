@@ -55,3 +55,6 @@ logs/
 # =========================
 database.mv.db
 
+### Eclipse Metadata ###
+.metadata/
+
